@@ -54,14 +54,14 @@ export const LoginForm = () => {
         localStorage.setItem("user_image", jsonResponse?.userInfo?.user_image ?? "");
         localStorage.setItem("mobile_number", jsonResponse?.userInfo?.mobile_number ?? "");
         localStorage.setItem("email", jsonResponse?.userInfo?.email ?? "");
-
-        setTimeout(() => {
-          navigate("/");
-          setError("");
+        setError("");
           setSuccess("");
                 setLoading(false)
+        // setTimeout(() => {
+          navigate("/");
+          
 
-        }, 1500);
+        // }, 1500);
       } else if (jsonResponse?.message === "User Not Found") {
         setError(jsonResponse?.message);
         setTimeout(() => {
