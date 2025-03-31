@@ -56,15 +56,16 @@ export const LoginForm = () => {
         localStorage.setItem("mobile_number", jsonResponse?.userInfo?.mobile_number ?? "");
         localStorage.setItem("email", jsonResponse?.userInfo?.email ?? "");
         console.log("after local storage >>>")
+                       setLoading(false)
+
         // setTimeout(() => {
- // setTimeout(async() => {
+ setTimeout(async() => {
         navigate("/");
           console.log("after navigate storage >>>")
         // setError("");
           // setSuccess("");
-                setLoading(false)
 
-      // }, 500);          
+      }, 500);          
 
         // }, 1500);
       } else if (jsonResponse?.message === "User Not Found") {
