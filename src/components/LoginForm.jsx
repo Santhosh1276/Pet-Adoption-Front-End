@@ -57,14 +57,14 @@ export const LoginForm = () => {
         localStorage.setItem("email", jsonResponse?.userInfo?.email ?? "");
         console.log("after local storage >>>")
         // setTimeout(() => {
- setTimeout(() => {
+ // setTimeout(async() => {
         navigate("/");
           console.log("after navigate storage >>>")
-        setError("");
-          setSuccess("");
+        // setError("");
+          // setSuccess("");
                 setLoading(false)
 
-      }, 500);          
+      // }, 500);          
 
         // }, 1500);
       } else if (jsonResponse?.message === "User Not Found") {
