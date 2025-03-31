@@ -34,7 +34,8 @@ export const LoginForm = () => {
 
   const login = async () => {
     try {
-      setLoading(true)
+           localStorage.clear();
+     setLoading(true)
       if (!email || !password) {
         setError("Please fill in all fields.");
               setLoading(false)
