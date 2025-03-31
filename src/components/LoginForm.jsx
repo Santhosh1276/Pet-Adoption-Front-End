@@ -48,6 +48,9 @@ export const LoginForm = () => {
 
       if (jsonResponse?.message === "Login Successfully") {
         setSuccess(jsonResponse?.message);
+        setError("");
+          setSuccess("");
+                setLoading(false)
         localStorage.setItem("accessToken", jsonResponse.accessToken);
         localStorage.setItem("user_id", jsonResponse?.userInfo?._id);
         localStorage.setItem("user_name", jsonResponse?.userInfo?.name);
@@ -55,12 +58,11 @@ export const LoginForm = () => {
         localStorage.setItem("user_image", jsonResponse?.userInfo?.user_image ?? "");
         localStorage.setItem("mobile_number", jsonResponse?.userInfo?.mobile_number ?? "");
         localStorage.setItem("email", jsonResponse?.userInfo?.email ?? "");
-        setError("");
-          setSuccess("");
-                setLoading(false)
+       
         // setTimeout(() => {
-          navigate("/");
-          
+ setTimeout(() => {
+        navigate("/");
+      }, 500);          
 
         // }, 1500);
       } else if (jsonResponse?.message === "User Not Found") {
