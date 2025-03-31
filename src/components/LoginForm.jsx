@@ -56,16 +56,14 @@ export const LoginForm = () => {
         localStorage.setItem("mobile_number", jsonResponse?.userInfo?.mobile_number ?? "");
         localStorage.setItem("email", jsonResponse?.userInfo?.email ?? "");
         console.log("after local storage >>>")
-                       setLoading(false)
-
         // setTimeout(() => {
- setTimeout(async() => {
+ // setTimeout(async() => {
         navigate("/");
-          console.log("after navigate storage >>>")
+          console.log("after navigate  >>>")
         // setError("");
           // setSuccess("");
 
-      }, 500);          
+      // }, 500);          
 
         // }, 1500);
       } else if (jsonResponse?.message === "User Not Found") {
@@ -74,7 +72,7 @@ export const LoginForm = () => {
           navigate("/sign-up");
           setError("");
           setSuccess("");
-                setLoading(false)
+                // setLoading(false)
 
         }, 2000);
       }
@@ -82,13 +80,11 @@ export const LoginForm = () => {
     catch (e) {
       console.log(e, "error on login >>>")
       setError(e.message)
-       setTimeout(() => {
-          
-         setError("");
-               setLoading(false)
-
-        }, 2000);
+     
     }
+   finally{
+          setLoading(false)
+   }
 
   };
 
