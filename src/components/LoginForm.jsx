@@ -47,10 +47,7 @@ export const LoginForm = () => {
       let jsonResponse = await result.json();
 
       if (jsonResponse?.message === "Login Successfully") {
-        setSuccess(jsonResponse?.message);
-        setError("");
-          setSuccess("");
-                setLoading(false)
+          setSuccess(jsonResponse?.message);
         localStorage.setItem("accessToken", jsonResponse.accessToken);
         localStorage.setItem("user_id", jsonResponse?.userInfo?._id);
         localStorage.setItem("user_name", jsonResponse?.userInfo?.name);
@@ -58,10 +55,15 @@ export const LoginForm = () => {
         localStorage.setItem("user_image", jsonResponse?.userInfo?.user_image ?? "");
         localStorage.setItem("mobile_number", jsonResponse?.userInfo?.mobile_number ?? "");
         localStorage.setItem("email", jsonResponse?.userInfo?.email ?? "");
-       
+        console.log("after local storage >>>")
         // setTimeout(() => {
  setTimeout(() => {
         navigate("/");
+          console.log("after navigate storage >>>")
+        setError("");
+          setSuccess("");
+                setLoading(false)
+
       }, 500);          
 
         // }, 1500);
