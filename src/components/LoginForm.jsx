@@ -58,7 +58,9 @@ export const LoginForm = () => {
         console.log("after local storage >>>")
         // setTimeout(() => {
  // setTimeout(async() => {
-        navigate("/");
+        // navigate("/");
+       window.location.href = "/";
+
           console.log("after navigate  >>>")
         // setError("");
           // setSuccess("");
