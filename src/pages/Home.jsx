@@ -68,7 +68,7 @@ const Home = () => {
 
   return (
     <Box sx={{ minHeight: "100dvh", backgroundColor: "#ECF0F3", pt: 8 ,
-      width: "97.5dvw"s,}}>
+      width: "97.5dvw"}}>
       <Loader open={loading } />
       <NavBar />
       <PetFilter pets={pets} onSearch={handleSearch} />
